@@ -28,11 +28,14 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.247);
   
   }
-  
-  #under:focus
-  {
-    color:#345836
-  }
+ .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black; 
+    z-index: 1000; 
+   
+
   .logo img {
     max-width: 100px;
   }
