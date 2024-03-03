@@ -1,34 +1,32 @@
 function countdown() {
-    // Date cible (14 mars 2024)
+    
     const targetDate = new Date('March 14, 2024 00:00:00').getTime();
 
-    // Mettre à jour le décompte toutes les secondes
     const timerInterval = setInterval(() => {
-        // Obtenez la date et l'heure actuelles
+      
         const currentDate = new Date().getTime();
 
-        // Calculez la différence entre la date cible et la date actuelle
+   
         const difference = targetDate - currentDate;
 
-        // Vérifiez si la date cible est atteinte
+
         if (difference <= 0) {
-            clearInterval(timerInterval); // Arrêter le décompte une fois que la date cible est atteinte
+            clearInterval(timerInterval); 
             document.querySelector('.hours').innerHTML = "Le hackathon est en cours !";
             return;
         }
 
-        // Calcul du temps restant en jours, heures, minutes et secondes
+   
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        // Affichage du temps restant sur la page HTML
         document.querySelector('.hours').innerHTML = `<divEVENT WILL START IN:<br> ${days} days,<b style='background:green'>  ${hours} hours</b>,${minutes} minutes, <b style='background:green'>${seconds} seconds</b>`;
-    }, 1000); // Mettre à jour toutes les secondes
+    }, 1000); 
 }
 
-// Appel de la fonction pour démarrer le décompte
+
 countdown();
 
 
@@ -83,3 +81,24 @@ window.addEventListener('scroll', handleScroll);
 
 // Appel initial pour vérifier les éléments visibles lors du chargement de la page
 handleScroll();
+
+
+
+// Sélectionnez le header
+const header = document.querySelector('header');
+
+// Fonction pour gérer le défilement
+function handleScroll() {
+    // Vérifiez la position de défilement
+    if (window.scrollY > 0) {
+        // Ajoutez une classe pour le style fixe et le fond noir
+        header.classList.add('fixed-header');
+    } else {
+        // Supprimez la classe lorsque le défilement remonte en haut de la page
+        header.classList.remove('fixed-header');
+    }
+}
+
+// Ajoutez un écouteur d'événements pour le défilement
+window.addEventListener('scroll', handleScroll);
+
