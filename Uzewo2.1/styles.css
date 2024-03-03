@@ -636,7 +636,7 @@ animation: 2s clignotte linear 0s infinite forwards alternate;
     text-align: center;
     display: grid;
     width: 100vw;
-    background: rgba(0, 0, 0, 0.773);
+    background: rgba(0, 0, 0, 0.9);
 padding-bottom: 5px;
     gap: 20px;
     transition: left 0.5s ease-in;
